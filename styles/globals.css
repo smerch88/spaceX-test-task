@@ -8,6 +8,6 @@
   }
 
   body {
-    @apply font-2xl bg-white_light font-lato text-primary;
+    @apply bg-white_light font-lato text-primary;
   }
 }
