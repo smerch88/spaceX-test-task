@@ -13,10 +13,10 @@ module.exports = {
     screens: {
       sm: '480px',
       md: '768px',
-      xl: '1280px',
+      xl: '1440px',
       smOnly: { max: '767.98px' },
       mdOnly: { min: '768px', max: '1279.98px' },
-      notXl: { max: '1279.98px' },
+      notXl: { max: '1439.98px' },
     },
     extend: {
       container: {
@@ -25,7 +25,7 @@ module.exports = {
           DEFAULT: '2rem',
           sm: '1.5rem',
           md: '2rem',
-          xl: '2rem',
+          xl: '80px',
         },
       },
       // backgroundImage: {
