@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Syne:wght@600;700;800&display=swap');
 
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   html {
@@ -9,5 +11,9 @@
 
   body {
     @apply bg-white_light font-lato text-primary;
+  }
+
+  .font-outline-2 {
+    -webkit-text-stroke: 2px black;
   }
 }

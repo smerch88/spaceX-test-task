@@ -12,12 +12,12 @@ export const Title = ({
 
   return (
     <Tag
-      className={cn('font-syne', className, {
+      className={cn('font-syne uppercase', className, {
         ['text-dark']: variant == 'dark',
         ['text-white_light']: variant == 'light',
-        ['text-5xl']: tag == 'h1',
-        ['text-[32px]']: tag == 'h2',
-        ['text-2xl']: tag == 'h3',
+        ['text-5xl font-extrabold	']: tag == 'h1',
+        ['text-[32px] font-extrabold']: tag == 'h2',
+        ['text-2xl font-bold']: tag == 'h3',
       })}
       {...(content ? { dangerouslySetInnerHTML: { __html: content } } : {})}
     >
