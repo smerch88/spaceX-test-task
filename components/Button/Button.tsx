@@ -12,10 +12,10 @@ export const Button = ({
   return (
     <button
       className={cn(
-        'group flex w-full justify-center font-syne text-2xl font-semibold uppercase text-very_dark',
+        'group flex w-full justify-center font-syne text-2xl font-semibold uppercase leading-[29px] text-very_dark duration-300 ease-in',
         className,
         {
-          ['bg-button p-3 ']: variant == 'primary',
+          ['bg-button py-3 ']: variant == 'primary',
           [' max-w-[53px] bg-heart p-[14.5px] hover:bg-heart_hover hover:text-white']:
             variant == 'heart',
         },
