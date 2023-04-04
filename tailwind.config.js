@@ -46,12 +46,8 @@ module.exports = {
         lato: ['Lato', 'sans-serif'],
         syne: ['Syne', 'sans-serif'],
       },
-      boxShadow: {
-        // sticky: 'inset 0 -1px 0 0 rgba(0, 0, 0, 0.1)',
-        // header: '1px 2px 8px rgba(37, 101, 208, 0.14)',
-        // card: '1px 2px 8px rgba(37, 101, 208, 0.14)',
-        // card_hover: '6px 8px 12px rgba(37, 101, 208, 0.18)',
-        // button_hover: '1px 2px 8px rgba(255, 255, 255, 0.54)',
+      dropShadow: {
+        button_hover: '0px 4px 4px rgba(0, 0, 0, 0.25)',
       },
     },
   },
