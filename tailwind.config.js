@@ -28,11 +28,12 @@ module.exports = {
           xl: '80px',
         },
       },
-      // backgroundImage: {
-      //   cardBg:
-      //     'linear-gradient(290.55deg, #2565D0 15.48%, #2769B3 53.63%, #3CC9CD 93.52%, #42E8E0 102.2%)',
-      //   contacts: "url('/images/contacts.svg')",
-      // },
+      backgroundImage: {
+        cardBg:
+          'linear-gradient(290.55deg, #2565D0 15.48%, #2769B3 53.63%, #3CC9CD 93.52%, #42E8E0 102.2%)',
+        // contacts: "url('/images/contacts.svg')",
+        heroTemp: "url('/images/slider/ship.png')",
+      },
       colors: {
         dark: '#1E1E1E',
         very_dark: '#000000',

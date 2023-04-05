@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import { HeaderProps } from './Header.props';
-import { Button } from '@/components/Button';
+import { Button } from '@/components/buttons/Button';
 import Link from 'next/link';
 import Logo from '@/public/images/SpaceX-Logo.svg';
-import { BtnLink } from '@/components/BtnLink';
+import { BtnLink } from '@/components/buttons/BtnLink';
 
 const navItems = [
   { id: '1', name: 'home', link: '#' },

@@ -25,7 +25,7 @@ export const Button = ({
     >
       <span
         className={
-          'group-hover: text-bold group-hover:font-outline-2 group-hover:drop-shadow-button_hover'
+          'group-hover:text-bold group-hover:font-outline-2 duration-300 ease-in group-hover:drop-shadow-button_hover'
         }
       >
         {children}
