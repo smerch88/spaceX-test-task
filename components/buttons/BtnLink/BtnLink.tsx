@@ -13,7 +13,7 @@ export const BtnLink = ({
       <a
         className={cn(
           'relative text-base	font-medium uppercase leading-[19px] text-white_light',
-          'hover:after:absolute hover:after:left-0 hover:after:top-6 hover:after:h-[1px] hover:after:w-full hover:after:bg-white_light hover:after:content-[""]',
+          'after:w-0 after:duration-300 after:ease-in hover:after:absolute hover:after:left-0 hover:after:top-6 hover:after:h-[1px] hover:after:w-full hover:after:bg-white_light hover:after:content-[""]',
 
           className,
         )}

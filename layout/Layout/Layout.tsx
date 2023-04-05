@@ -6,7 +6,7 @@ const Layout = ({ children, ...props }: LayoutProps): JSX.Element => {
   return (
     <div className="flex h-full min-h-screen flex-col bg-slate-50" {...props}>
       <Header />
-      <main className="flex-grow pt-[80px]">{children}</main>
+      <main className="flex-grow">{children}</main>
     </div>
   );
 };
