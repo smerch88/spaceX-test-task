@@ -2,6 +2,7 @@ import { Section } from '@/components/common/Section';
 import { Paragraph } from '@/components/typography/Paragraph';
 import { Title } from '@/components/typography/Title';
 import cn from 'classnames';
+import Arrow from 'public/images/Arrow-Down.svg';
 
 export const HeroSection = () => {
   return (
@@ -17,12 +18,12 @@ export const HeroSection = () => {
           <br />
           <span className="text-[310px]">YOU</span>
         </Title>
-        <Paragraph
-          variant="outlined"
-          className="absolute bottom-[33px] left-[50%] z-10 translate-x-[-50%]"
-        >
-          Explore tours
-        </Paragraph>
+        <div className="wrap absolute bottom-[33px] left-[50%] z-10 flex translate-x-[-50%]">
+          <Paragraph variant="outlined" className="mr-2">
+            Explore tours
+          </Paragraph>
+          <Arrow className="h-[40px] w-[40px]" />
+        </div>
       </div>
     </Section>
   );
