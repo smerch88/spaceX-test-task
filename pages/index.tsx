@@ -4,12 +4,14 @@ import { Paragraph } from '@/components/typography/Paragraph';
 import { Title } from '@/components/typography/Title';
 import { withLayout } from '@/layout/Layout';
 import { HeroSection } from '@/page-components/Hero';
+import { ToursSection } from '@/page-components/Tours';
 
 const Home = () => {
   return (
     <>
       <HeroSection />
-      <Section>
+      <ToursSection />
+      {/* <Section>
         <Title tag="h1" variant="light">
           The space is waiting for
         </Title>
@@ -88,7 +90,7 @@ const Home = () => {
         <Button variant="primary" header>
           header
         </Button>
-      </Section>
+      </Section> */}
     </>
   );
 };
