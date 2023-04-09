@@ -30,4 +30,32 @@
   .font-outline-1 {
     -webkit-text-stroke: 1px black;
   }
+
+  .slider-control-bottomcenter button {
+    background: black !important;
+    border-radius: 50%;
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .slider-control-bottomcenter svg {
+    display: none !important;
+  }
+  .slider-control-bottomcenter li {
+    margin-right: 5px !important;
+  }
+}
+
+@layer components {
+  .slider-control-bottomcenter button {
+    background: black !important;
+    border-radius: 50%;
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .slider-control-bottomcenter svg {
+    display: none !important;
+  }
+  .slider-control-bottomcenter li {
+    margin-right: 5px !important;
+  }
 }
