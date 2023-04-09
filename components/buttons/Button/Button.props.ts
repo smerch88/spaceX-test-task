@@ -7,5 +7,6 @@ export interface ButtonProps
   > {
   children?: ReactNode;
   variant: 'primary' | 'heart';
+  like?: boolean;
   header?: boolean;
 }
