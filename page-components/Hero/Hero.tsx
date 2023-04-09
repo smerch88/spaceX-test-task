@@ -18,12 +18,15 @@ export const HeroSection = () => {
           <br />
           <span className="text-[310px]">YOU</span>
         </Title>
-        <div className="wrap absolute bottom-[33px] left-[50%] z-10 flex translate-x-[-50%]">
+        <a
+          href="#tours"
+          className="wrap absolute bottom-[33px] left-[50%] z-10 flex translate-x-[-50%]"
+        >
           <Paragraph variant="outlined" className="mr-2">
             Explore tours
           </Paragraph>
           <Arrow className="h-[40px] w-[40px]" />
-        </div>
+        </a>
       </div>
     </Section>
   );

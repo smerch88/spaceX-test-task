@@ -7,6 +7,7 @@ export const Button = ({
   header = false,
   children,
   className,
+  like = false,
   ...props
 }: ButtonProps): JSX.Element => {
   return (
@@ -20,6 +21,7 @@ export const Button = ({
             variant == 'heart',
         },
         header && 'max-w-[163px]',
+        like && 'bg-heart_hover text-white',
       )}
       {...props}
     >

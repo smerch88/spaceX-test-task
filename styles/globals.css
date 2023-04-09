@@ -13,6 +13,16 @@
     @apply bg-white_light font-lato text-primary;
   }
 
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
   .font-outline-2 {
     -webkit-text-stroke: 2px black;
   }
