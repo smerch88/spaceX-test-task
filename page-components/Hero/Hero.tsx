@@ -4,13 +4,33 @@ import { Title } from '@/components/typography/Title';
 import cn from 'classnames';
 import Arrow from 'public/images/Arrow-Down.svg';
 import Carousel from 'nuka-carousel';
-// import Image from 'next/image';
 
-// const carouselImages = [
-//   { id: 1, src: '/images/slider/ship.png', alt: 'ship' },
-//   { id: 2, src: '/images/slider/guy.png', alt: 'guy' },
-//   { id: 3, src: '/images/slider/girl.png', alt: 'girl' },
-// ];
+const carouselImages = [
+  { id: 1, src: '/images/slider/ship.png', alt: 'ship' },
+  { id: 2, src: '/images/slider/guy.png', alt: 'guy' },
+  { id: 3, src: '/images/slider/girl.png', alt: 'girl' },
+];
+
+const params = {
+  autoplay: true,
+  wrapAround: true,
+  defaultControlsConfig: {
+    containerClassName: 'containerClassName',
+    pagingDotsClassName: 'pagingDotsClassName',
+    pagingDotsContainerClassName: 'pagingDotsContainerClassName',
+    pagingDotsStyle: {
+      fill: '#FFF',
+      width: '24px',
+      height: '24px',
+      border: '1px solid white',
+      borderRadius: '50%',
+      backgroundColor: 'transparent',
+      paddingLeft: '8px',
+    },
+  },
+  disableEdgeSwiping: true,
+  disableSwipe: true,
+};
 
 export const HeroSection = () => {
   return (
@@ -26,23 +46,23 @@ export const HeroSection = () => {
           'before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-full before:bg-dark/[.48] before:content-[""]',
         )}
       >
-        <Carousel autoplay wrapAround className="h-full w-full">
-          <div className="h-[100vh] object-cover">
-            <img className="h-full w-full" src="/images/slider/ship.png" />
-          </div>
-          <div className="h-[100vh] object-cover">
-            <img className="h-full w-full" src="/images/slider/guy.png" />
-          </div>
-          <div className="h-[100vh] object-cover">
-            <img className="h-full w-full" src="/images/slider/girl.png" />
-          </div>
+        <Carousel
+          {...params}
+          renderCenterLeftControls={({ previousSlide }) => null}
+          renderCenterRightControls={({ nextSlide }) => null}
+        >
+          {carouselImages.map(image => (
+            <div key={image.id} className="h-[100vh] object-cover">
+              <img className="h-full w-full" src={image.src} alt={image.alt} />
+            </div>
+          ))}
         </Carousel>
       </div>
       <div className="container">
         <Title
           tag="h1"
           variant="light"
-          className="absolute  left-1/2 top-1/2 z-10 mb-[58px] -translate-x-1/2 -translate-y-1/2 transform"
+          className="absolute left-1/2 top-1/2 z-10 mb-[58px] -translate-x-1/2 -translate-y-1/2 transform"
         >
           The space is waiting for
           <br />

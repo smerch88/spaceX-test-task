@@ -46,16 +46,20 @@
 }
 
 @layer components {
-  .slider-control-bottomcenter button {
-    background: black !important;
-    border-radius: 50%;
-    width: 50px !important;
-    height: 50px !important;
+  .containerClassName {
   }
-  .slider-control-bottomcenter svg {
-    display: none !important;
+  .pagingDotsClassName .active {
+    opacity: 0;
   }
-  .slider-control-bottomcenter li {
-    margin-right: 5px !important;
+  .pagingDotsContainerClassName {
+    position: absolute !important;
+    top: 52% !important;
+    left: 47% !important;
+    transform: translate(-50%, -50%) !important;
+    gap: 8px;
+  }
+
+  .pagingDotsStyle .active {
+    opacity: 0.5 !important;
   }
 }
