@@ -32,7 +32,7 @@ module.exports = {
         cardBg:
           'linear-gradient(290.55deg, #2565D0 15.48%, #2769B3 53.63%, #3CC9CD 93.52%, #42E8E0 102.2%)',
         // contacts: "url('/images/contacts.svg')",
-        heroTemp: "url('/images/slider/ship.png')",
+        heroTemp: "url('/images/slider/guy.png')",
       },
       colors: {
         dark: '#1E1E1E',

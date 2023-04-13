@@ -14,9 +14,10 @@
     "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.10",
+    "@apollo/client": "^3.7.12",
     "@headlessui/react": "^1.7.13",
     "@headlessui/tailwindcss": "^0.1.2",
+    "@reduxjs/toolkit": "^1.9.3",
     "@types/node": "18.14.2",
     "@types/react-dom": "18.0.11",
     "@types/react-scroll": "^1.8.6",
@@ -34,8 +35,10 @@
     "react-hook-form-persist": "^3.0.0",
     "react-i18next": "^12.2.0",
     "react-phone-input-2": "^2.15.1",
+    "react-redux": "^8.0.5",
     "react-responsive": "^9.0.2",
     "react-use": "^17.4.0",
+    "redux-persist": "^6.0.0",
     "swiper": "^9.1.1",
     "typescript": "4.9.5"
   },

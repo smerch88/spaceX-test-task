@@ -1,11 +1,11 @@
 import { Section } from '@/components/common/Section';
 import { TourCard } from '@/components/common/TourCard';
-import { Paragraph } from '@/components/typography/Paragraph';
 import { Title } from '@/components/typography/Title';
 import cn from 'classnames';
 import Carousel from 'nuka-carousel';
+import { ToursProps } from './Tours.props';
 
-const data = [
+const data2 = [
   {
     id: 1,
     title: 'extraordinary tour',
@@ -82,7 +82,9 @@ const params = {
   slidesToScroll: 3,
 };
 
-export const ToursSection = () => {
+export const ToursSection: React.FC<ToursProps> = ({ ...props }) => {
+  console.log('ToursSection', props);
+
   return (
     <Section id="tours" className={cn('h-[100vh]')}>
       <div className="container">
@@ -91,7 +93,7 @@ export const ToursSection = () => {
         </Title>
         <ul className="">
           <Carousel {...params}>
-            {data.map(({ id, title, text, href, like }) => (
+            {data2.map(({ id, title, text, href, like }) => (
               <TourCard
                 key={id}
                 title={title}
@@ -101,6 +103,17 @@ export const ToursSection = () => {
               />
             ))}
           </Carousel>
+        </ul>
+        <ul className="grid grid-cols-3 gap-8">
+          {data2.map(({ id, title, text, href, like }) => (
+            <TourCard
+              key={id}
+              title={title}
+              text={text}
+              href={href}
+              like={like}
+            />
+          ))}
         </ul>
       </div>
     </Section>

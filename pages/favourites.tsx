@@ -1,9 +1,12 @@
 import { withLayout } from '@/layout/Layout';
-import { HeroSection } from '@/page-components/Hero';
-import { ToursSection } from '@/page-components/Tours';
+import { HeroFavsSection } from '@/page-components/HeroFavs';
 
 const Favourites = () => {
-  return <></>;
+  return (
+    <>
+      <HeroFavsSection />
+    </>
+  );
 };
 
 export default withLayout(Favourites);
