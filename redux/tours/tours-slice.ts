@@ -1,10 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
-interface Tour {
+export interface Tour {
   id: string;
-  name: string;
-  description: string;
+  title: string;
+  text: string;
+  href: string;
+  like: boolean;
 }
 
 interface TourState {
@@ -20,7 +22,12 @@ const tourSlice = createSlice({
   initialState,
   reducers: {
     addTour: (state, action: PayloadAction<Tour>) => {
-      state.tours.push(action.payload);
+      const existingTour = state.tours.find(
+        tour => tour.id === action.payload.id,
+      );
+      if (!existingTour) {
+        state.tours.push(action.payload);
+      }
     },
   },
 });

@@ -1,4 +1,4 @@
-// import { RootState } from '../store';
+import { RootState } from '../store';
+import { Tour } from './tours-slice';
 
-// export const getTours = (state: RootState): MoviesSearchResult =>
-//   state.tours.tours;
+export const getTours = (state: RootState): Tour[] => state.tours.tours;

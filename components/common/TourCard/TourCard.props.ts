@@ -5,6 +5,7 @@ export interface TourCardProps
     HtmlHTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {
+  id: string;
   title: string;
   text: string;
   href: string;

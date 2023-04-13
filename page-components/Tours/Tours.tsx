@@ -95,6 +95,7 @@ export const ToursSection: React.FC<ToursProps> = ({ ...props }: any) => {
           <Carousel {...params}>
             {props.data.rockets.map(({ id, name, description }: any) => (
               <TourCard
+                id={id}
                 key={id}
                 title={name}
                 text={description}
