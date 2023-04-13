@@ -11,6 +11,7 @@
 
   body {
     @apply bg-white_light font-lato text-primary;
+    
   }
 
   ul {

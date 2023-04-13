@@ -7,6 +7,12 @@ import { ToursProps } from './Tours.props';
 import Right from 'public/images/Arrow-Right.svg';
 import Left from 'public/images/Arrow-Left.svg';
 
+const cardImages = [
+  { id: 1, src: '/images/slider/ship.png', alt: 'ship' },
+  { id: 2, src: '/images/slider/guy.png', alt: 'guy' },
+  { id: 3, src: '/images/slider/girl.png', alt: 'girl' },
+];
+
 const params = {
   defaultControlsConfig: {
     nextButtonText: '',
@@ -55,7 +61,7 @@ const params = {
 };
 
 export const ToursSection: React.FC<ToursProps> = ({ ...props }: any) => {
-  console.log('ToursSection', props.data.rockets);
+  const numcardImages = cardImages.length;
 
   return (
     <Section id="tours" className={cn('h-[100vh]')}>
@@ -72,7 +78,7 @@ export const ToursSection: React.FC<ToursProps> = ({ ...props }: any) => {
                   key={id}
                   title={name}
                   text={description}
-                  href={'/images/slider/ship.png'}
+                  href={cardImages[idx % numcardImages].src}
                 />
               ),
             )}
