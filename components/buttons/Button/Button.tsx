@@ -2,6 +2,8 @@ import cn from 'classnames';
 import { ButtonProps } from './Button.props';
 import Heart from 'public/images/heart.svg';
 import Delete from 'public/images/delete.svg';
+import { useRouter } from 'next/router';
+
 
 export const Button = ({
   variant,
@@ -11,6 +13,9 @@ export const Button = ({
   like = false,
   ...props
 }: ButtonProps): JSX.Element => {
+   const router = useRouter();
+  const currentPage = router.pathname;
+
   return (
     <button
       className={cn(
@@ -25,6 +30,8 @@ export const Button = ({
         },
         header && 'max-w-[163px]',
         like && 'bg-heart_hover text-white',
+          currentPage === '/favourites' && { [' max-w-[53px] p-[14.5px] bg-heart_hover text-white']:
+            variant == 'heart',}
       )}
       {...props}
     >

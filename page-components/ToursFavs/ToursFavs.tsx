@@ -9,7 +9,7 @@ export const ToursFavsSection = () => {
   const tours = useSelector(getTours);
 
   return (
-    <Section id="tours" className={cn('h-[100vh]')}>
+    <Section id="tours" className={cn('')}>
       <div className="container">
         {tours &&
          <div className='flex justify-end'>
