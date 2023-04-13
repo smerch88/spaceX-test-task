@@ -7,7 +7,7 @@ import { getApolloClient } from '@/utils/apollo-client';
 import { HeroSection } from '@/page-components/Hero';
 import { ToursSection } from '@/page-components/Tours';
 
-const Home: NextPage = ({ ...props }) => {
+const Home: NextPage = ({ ...props }: any) => {
   return (
     <>
       <HeroSection />

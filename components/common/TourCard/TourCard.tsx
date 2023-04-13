@@ -36,7 +36,7 @@ export const TourCard: FC<TourCardProps> = ({
         <Title tag="h3" className="mb-4">
           {title}
         </Title>
-        <Paragraph className="mb-16 px-8">{text}</Paragraph>
+        <Paragraph className="mb-16 px-8 line-clamp-2">{text}</Paragraph>
         <div className="flex gap-4 px-8 pb-6">
           <Button variant="primary">buy</Button>
           <Button variant="heart" like={like} />
