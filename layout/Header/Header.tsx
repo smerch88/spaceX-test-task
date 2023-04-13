@@ -32,7 +32,7 @@ export const Header = ({ ...props }: HeaderProps): JSX.Element => {
   useEffect(() => {
     window.addEventListener('scroll', handleHiddenNavbar);
     return () => window.removeEventListener('scroll', handleHiddenNavbar);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [prevScrollY]);
 
   return (

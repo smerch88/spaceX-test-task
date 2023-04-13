@@ -53,7 +53,11 @@ export const HeroSection = () => {
         >
           {carouselImages.map(image => (
             <div key={image.id} className="h-[100vh]">
-              <img className="h-full w-full object-cover" src={image.src} alt={image.alt} />
+              <img
+                className="h-full w-full object-cover"
+                src={image.src}
+                alt={image.alt}
+              />
             </div>
           ))}
         </Carousel>

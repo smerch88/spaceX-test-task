@@ -18,9 +18,7 @@ export const getApolloClient = () => {
 export const _createApolloClient = () => {
   return new ApolloClient({
     link: new HttpLink({
-      uri: removeLastTrailingSlash(
-        process.env.GRAPHQL_ENDPOINT as string,
-      ),
+      uri: removeLastTrailingSlash(process.env.GRAPHQL_ENDPOINT as string),
     }),
 
     cache: new InMemoryCache({
