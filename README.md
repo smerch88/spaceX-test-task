@@ -72,10 +72,10 @@ similar logics.
 
 - ### Section
 
-  | Prop        | Type        | Default     | Description                                              |
-  | ----------- | ----------- | ----------- | -------------------------------------------------------- |
-  | `children`  | `ReactNode` | `undefined` | undefined The content to be rendered within the section. |
-  | `className` | `string`    | `undefined` | An optional CSS class to be applied to the section       |
+| Prop        | Type        | Default     | Description                                              |
+| ----------- | ----------- | ----------- | -------------------------------------------------------- |
+| `children`  | `ReactNode` | `undefined` | undefined The content to be rendered within the section. |
+| `className` | `string`    | `undefined` | An optional CSS class to be applied to the section       |
 
 - ### Button
 
