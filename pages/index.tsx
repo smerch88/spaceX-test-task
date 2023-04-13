@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { gql } from '@apollo/client';
 import { GetStaticProps, NextPage } from 'next';
 import { Paragraph } from '@/components/typography/Paragraph';
@@ -15,8 +16,9 @@ const Home: NextPage = ({ ...props }: any) => {
     <>
       <Modal>
         <Title>Warning</Title>
-        <Paragraph>This WebApp developed under the 1440px width template.
-          It could display not correctly if your screen resolution is different.
+        <Paragraph>
+          This WebApp developed under the 1440px width template. It could
+          display not correctly if your screen resolution is different.
         </Paragraph>
       </Modal>
       <HeroSection />

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Section } from '@/components/common/Section';
 import { TourCard } from '@/components/common/TourCard';
 import { Title } from '@/components/typography/Title';
