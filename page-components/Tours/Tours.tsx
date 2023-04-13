@@ -4,117 +4,86 @@ import { Title } from '@/components/typography/Title';
 import cn from 'classnames';
 import Carousel from 'nuka-carousel';
 import { ToursProps } from './Tours.props';
+import Right from 'public/images/Arrow-Right.svg';
+import Left from 'public/images/Arrow-Left.svg';
 
-// const data2 = [
-//   {
-//     id: 1,
-//     title: 'extraordinary tour',
-//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-//     href: '/images/slider/ship.png',
-//     like: false,
-//   },
-//   {
-//     id: 2,
-//     title: 'extraordinary tour',
-//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-//     href: '/images/slider/girl.png',
-//     like: false,
-//   },
-//   {
-//     id: 3,
-//     title: 'extraordinary tour',
-//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-//     href: '/images/slider/guy.png',
-//     like: false,
-//   },
-//   {
-//     id: 4,
-//     title: 'extraordinary tour',
-//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-//     href: '/images/slider/ship.png',
-//     like: false,
-//   },
-//   {
-//     id: 5,
-//     title: 'extraordinary tour',
-//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-//     href: '/images/slider/girl.png',
-//     like: false,
-//   },
-//   {
-//     id: 6,
-//     title: 'extraordinary tour',
-//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-//     href: '/images/slider/guy.png',
-//     like: false,
-//   },
-//   {
-//     id: 7,
-//     title: 'extraordinary tour',
-//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-//     href: '/images/slider/ship.png',
-//     like: false,
-//   },
-//   {
-//     id: 8,
-//     title: 'extraordinary tour',
-//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-//     href: '/images/slider/girl.png',
-//     like: false,
-//   },
-//   {
-//     id: 9,
-//     title: 'extraordinary tour',
-//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-//     href: '/images/slider/guy.png',
-//     like: false,
-//   },
-// ];
+const cardImages = [
+  { id: 1, src: '/images/slider/ship.png', alt: 'ship' },
+  { id: 2, src: '/images/slider/guy.png', alt: 'guy' },
+  { id: 3, src: '/images/slider/girl.png', alt: 'girl' },
+];
 
 const params = {
   defaultControlsConfig: {
-    containerClassName: 'containerClassName2',
-    pagingDotsClassName: 'pagingDotsClassName2',
-    pagingDotsContainerClassName: 'pagingDotsContainerClassName2',
-    pagingDotsStyle: {},
+    nextButtonText: '',
+    prevButtonText: '',
+    containerClassName: 'containerClassNameTours',
+    pagingDotsClassName: 'pagingDotsClassNameTours',
+    pagingDotsContainerClassName: 'pagingDotsContainerClassNameTours',
+    pagingDotsStyle: {
+      fill: '#black',
+      width: '24px',
+      height: '24px',
+      border: '1px solid black',
+      borderRadius: '50%',
+      backgroundColor: 'transparent',
+      paddingLeft: '8px',
+      paddingRight: '8px',
+    },
+    renderBottomCenterControls: null,
+    renderCenterLeftControls: null,
+    renderCenterRightControls: null,
+    renderBottomLeftControls: null,
+    renderBottomRightControls: null,
   },
+  renderTopRightControls: ({ nextSlide, previousSlide }: any) => (
+    <button
+      className="bg-heart p-2.5 text-heart"
+      style={{ position: 'absolute', top: '-80px', right: '16px' }}
+      onClick={nextSlide}
+    >
+      <Right className={'h-6 w-6 fill-current'} />
+    </button>
+  ),
+  renderTopLeftControls: ({ nextSlide, previousSlide }: any) => (
+    <button
+      className="bg-heart p-2.5 text-heart"
+      style={{ position: 'absolute', top: '-80px', right: '76px' }}
+      onClick={previousSlide}
+    >
+      <Left className={'h-6 w-6 fill-current'} />
+    </button>
+  ),
+  renderCenterLeftControls: ({ previousSlide }: any) => null,
+  renderCenterRightControls: ({ nextSlide }: any) => null,
   slidesToShow: 3,
   slidesToScroll: 3,
 };
 
 export const ToursSection: React.FC<ToursProps> = ({ ...props }: any) => {
-  console.log('ToursSection', props.data.rockets);
+  const numcardImages = cardImages.length;
 
   return (
     <Section id="tours" className={cn('h-[100vh]')}>
       <div className="container">
-        <Title tag="h2" className="pt-24">
+        <Title tag="h2" className="mb-10 pt-24">
           popular tours
         </Title>
         <ul className="">
           <Carousel {...params}>
-            {props.data.rockets.map(({ id, name, description }: any) => (
-              <TourCard
-                id={id}
-                key={id}
-                title={name}
-                text={description}
-                href={'/images/slider/ship.png'}
-              />
-            ))}
+            {props.data.rockets.map(
+              ({ id, name, description }: any, idx: any) => (
+                <TourCard
+                  id={id}
+                  key={id}
+                  title={name}
+                  text={description}
+                  href={cardImages[idx % numcardImages].src}
+                />
+              ),
+            )}
           </Carousel>
         </ul>
-        {/* <ul className="grid grid-cols-3 gap-8">
-          {data2.map(({ id, title, text, href, like }) => (
-            <TourCard
-              key={id}
-              title={title}
-              text={text}
-              href={href}
-              like={like}
-            />
-          ))}
-        </ul> */}
       </div>
     </Section>
   );

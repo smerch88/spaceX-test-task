@@ -11,6 +11,7 @@
 
   body {
     @apply bg-white_light font-lato text-primary;
+    
   }
 
   ul {
@@ -46,17 +47,21 @@
 }
 
 @layer components {
-  .containerClassName {
-  }
   .pagingDotsClassName .active {
     opacity: 0;
   }
+  
   .pagingDotsContainerClassName {
     position: absolute !important;
     top: 52% !important;
     left: 47% !important;
     transform: translate(-50%, -50%) !important;
     gap: 8px;
+  }
+
+  .pagingDotsContainerClassNameTours {
+    gap: 8px;
+    top: 40px !important;
   }
 
   .pagingDotsStyle .active {

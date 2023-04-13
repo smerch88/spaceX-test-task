@@ -4,21 +4,43 @@ import { Button } from '@/components/buttons/Button';
 import Link from 'next/link';
 import Logo from '@/public/images/SpaceX-Logo.svg';
 import { BtnLink } from '@/components/buttons/BtnLink';
+import { useEffect, useState } from 'react';
 
 const navItems = [
   { id: '1', name: 'home', link: '/' },
-  { id: '2', name: 'tours', link: '#tours' },
+  { id: '2', name: 'tours', link: '/#tours' },
   { id: '3', name: 'about', link: '#' },
   { id: '4', name: 'help', link: '#' },
 ];
 
 export const Header = ({ ...props }: HeaderProps): JSX.Element => {
+  const HEIGHT_SCROLL = 80;
+
+  // Hidden Navbar
+  const [hidden, setHidden] = useState(false);
+  const [prevScrollY, setPrevScrollY] = useState(0);
+
+  const handleHiddenNavbar = () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY >= HEIGHT_SCROLL && currentScrollY > prevScrollY) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+    setPrevScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleHiddenNavbar);
+    return () => window.removeEventListener('scroll', handleHiddenNavbar);
+  }, [prevScrollY]);
+
   return (
     <header
       {...props}
-      className={
-        '!bg-opacity-48 !fixed left-0 top-0 !z-[9999] flex w-full items-center !bg-dark/[.48] !transition'
-      }
+      className={`!bg-opacity-48 !fixed left-0 top-0 !z-[9999] flex w-full items-center !bg-dark/[.48] !transition ${
+        hidden ? 'hidden' : ''
+      }`}
     >
       <div className="container">
         <div className="relative flex items-center justify-between py-3.5">
