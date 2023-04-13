@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { ButtonProps } from './Button.props';
 import Heart from 'public/images/heart.svg';
-import Trash from 'public/images/trash.svg';
+import Delete from 'public/images/delete.svg';
 
 export const Button = ({
   variant,
@@ -17,9 +17,11 @@ export const Button = ({
         'group flex w-full justify-center font-syne text-2xl font-semibold uppercase leading-[29px] text-very_dark duration-300 ease-in',
         className,
         {
-          ['bg-button py-3 ']: variant == 'primary',
+          ['bg-button py-3']: variant == 'primary',
           [' max-w-[53px] bg-heart p-[14.5px] hover:bg-heart_hover hover:text-white']:
             variant == 'heart',
+          ['max-w-[53px] bg-heart p-[14.5px] hover:bg-heart_hover hover:text-white']:
+            variant == 'delete',
         },
         header && 'max-w-[163px]',
         like && 'bg-heart_hover text-white',
@@ -34,7 +36,7 @@ export const Button = ({
         {children}
       </span>
       {variant == 'heart' && <Heart className={'h-6 w-6 fill-current'} />}
-      {variant == 'trash' && <Trash className={'h-6 w-6 fill-current'} />}
+      {variant == 'delete' && <Delete className={'h-6 w-6 fill-current'} />}
     </button>
   );
 };

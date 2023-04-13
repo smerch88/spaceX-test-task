@@ -3,13 +3,22 @@ import { TourCard } from '@/components/common/TourCard';
 import { getTours } from '@/redux/tours/tours-selectors';
 import cn from 'classnames';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { clearTours } from '@/redux/tours/tours-slice';
 
 export const ToursFavsSection = () => {
   const tours = useSelector(getTours);
 
+  const dispatch = useDispatch();
+
+  const handleClearAll = () => {
+    dispatch(clearTours());
+  };
+
   return (
     <Section id="tours" className={cn('h-[100vh]')}>
       <div className="container">
+        <button onClick={handleClearAll}>Clear all</button>
         <ul className="grid grid-cols-3 gap-8">
           {tours.map(({ id, title, text, href }) => (
             <TourCard key={id} id={id} title={title} text={text} href={href} />
