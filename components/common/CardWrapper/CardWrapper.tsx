@@ -11,13 +11,7 @@ export const CardWrapper: FC<CardWrapperProps> = ({
   const Tag = tag ?? 'li';
 
   return (
-    <Tag
-      className={cn(
-        '',
-        className,
-      )}
-      {...props}
-    >
+    <Tag className={cn('', className)} {...props}>
       {children}
     </Tag>
   );

@@ -17,7 +17,8 @@ export const Title = ({
         ['text-5xl font-extrabold	']: tag == 'h1',
         ['text-[32px] font-extrabold']: tag == 'h2',
         ['text-2xl font-bold']: tag == 'h3',
-      })}>
+      })}
+    >
       {children}
     </Tag>
   );

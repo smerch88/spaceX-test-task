@@ -11,7 +11,6 @@
 
   body {
     @apply bg-white_light font-lato text-primary;
-    
   }
 
   ul {
@@ -50,7 +49,7 @@
   .pagingDotsClassName .active {
     opacity: 0;
   }
-  
+
   .pagingDotsContainerClassName {
     position: absolute !important;
     top: 52% !important;

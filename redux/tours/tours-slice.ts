@@ -38,8 +38,8 @@ const tourSlice = createSlice({
       }
     },
     clearTours: state => {
-      state.tours = []
-    }
+      state.tours = [];
+    },
   },
 });
 

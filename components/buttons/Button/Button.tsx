@@ -4,7 +4,6 @@ import Heart from 'public/images/heart.svg';
 import Delete from 'public/images/delete.svg';
 import { useRouter } from 'next/router';
 
-
 export const Button = ({
   variant,
   header = false,
@@ -13,7 +12,7 @@ export const Button = ({
   like = false,
   ...props
 }: ButtonProps): JSX.Element => {
-   const router = useRouter();
+  const router = useRouter();
   const currentPage = router.pathname;
 
   return (
@@ -30,8 +29,10 @@ export const Button = ({
         },
         header && 'max-w-[163px]',
         like && 'bg-heart_hover text-white',
-          currentPage === '/favourites' && { [' max-w-[53px] p-[14.5px] bg-heart_hover text-white']:
-            variant == 'heart',}
+        currentPage === '/favourites' && {
+          [' max-w-[53px] bg-heart_hover p-[14.5px] text-white']:
+            variant == 'heart',
+        },
       )}
       {...props}
     >

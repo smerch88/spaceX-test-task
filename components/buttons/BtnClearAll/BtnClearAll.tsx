@@ -8,21 +8,22 @@ export const BtnClearAll = ({
   className,
   ...props
 }: BtnClearAllProps): JSX.Element => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleClearAll = () => {
     dispatch(clearTours());
   };
   return (
-      <button onClick={handleClearAll}
-        className={cn(
-          'relative text-2xl font-medium leading-[29px]',
-          'duration-300 after:ease-in hover:text-very_dark hover:bg-button',
-          className,
-        )}
-        {...props}
-      >
-        {children}
-      </button>
+    <button
+      onClick={handleClearAll}
+      className={cn(
+        'relative text-2xl font-medium leading-[29px]',
+        'duration-300 after:ease-in hover:bg-button hover:text-very_dark',
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </button>
   );
 };
