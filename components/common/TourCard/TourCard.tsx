@@ -1,17 +1,15 @@
-import { FC, useState } from 'react';
-import cn from 'classnames';
-import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '@/redux/store';
-import { addTour } from '@/redux/tours/tours-slice';
-import { deleteTour } from '@/redux/tours/tours-slice';
-
-import { TourCardProps } from './TourCard.props';
-import { CardWrapper } from '../CardWrapper';
-import { Title } from '@/components/typography/Title';
-import { Paragraph } from '@/components/typography/Paragraph';
-import Image from 'next/image';
+import { addTour, deleteTour } from '@/redux/tours/tours-slice';
+import cn from 'classnames';
+import { FC, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '@/components/buttons/Button';
+import { Paragraph } from '@/components/typography/Paragraph';
+import { Title } from '@/components/typography/Title';
 import { getTours } from '@/redux/tours/tours-selectors';
+import Image from 'next/image';
+import { CardWrapper } from '../CardWrapper';
+import { TourCardProps } from './TourCard.props';
 
 export const TourCard: FC<TourCardProps> = ({
   id,

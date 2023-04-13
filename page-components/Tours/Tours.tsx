@@ -3,9 +3,9 @@ import { TourCard } from '@/components/common/TourCard';
 import { Title } from '@/components/typography/Title';
 import cn from 'classnames';
 import Carousel from 'nuka-carousel';
-import { ToursProps } from './Tours.props';
-import Right from 'public/images/Arrow-Right.svg';
 import Left from 'public/images/Arrow-Left.svg';
+import Right from 'public/images/Arrow-Right.svg';
+import { ToursProps } from './Tours.props';
 
 const cardImages = [
   { id: 1, src: '/images/slider/ship.png', alt: 'ship' },
