@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import { ButtonProps } from './Button.props';
 import Heart from 'public/images/heart.svg';
+import Trash from 'public/images/trash.svg';
 
 export const Button = ({
   variant,
@@ -33,6 +34,7 @@ export const Button = ({
         {children}
       </span>
       {variant == 'heart' && <Heart className={'h-6 w-6 fill-current'} />}
+      {variant == 'trash' && <Trash className={'h-6 w-6 fill-current'} />}
     </button>
   );
 };

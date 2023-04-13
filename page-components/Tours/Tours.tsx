@@ -100,7 +100,6 @@ export const ToursSection: React.FC<ToursProps> = ({ ...props }: any) => {
                 title={name}
                 text={description}
                 href={'/images/slider/ship.png'}
-                like={false}
               />
             ))}
           </Carousel>

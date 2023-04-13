@@ -6,21 +6,13 @@ import { useSelector } from 'react-redux';
 
 export const ToursFavsSection = () => {
   const tours = useSelector(getTours);
-  console.log(tours)
 
   return (
     <Section id="tours" className={cn('h-[100vh]')}>
       <div className="container">
         <ul className="grid grid-cols-3 gap-8">
-          {tours.map(({ id, title, text, href, like }) => (
-            <TourCard
-              key={id}
-              id={id}
-              title={title}
-              text={text}
-              href={href}
-              like={like}
-            />
+          {tours.map(({ id, title, text, href }) => (
+            <TourCard key={id} id={id} title={title} text={text} href={href} />
           ))}
         </ul>
       </div>

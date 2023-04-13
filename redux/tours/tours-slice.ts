@@ -22,15 +22,14 @@ const tourSlice = createSlice({
   initialState,
   reducers: {
     addTour: (state, action: PayloadAction<Tour>) => {
-      const existingTour = state.tours.find(
-        tour => tour.id === action.payload.id,
-      );
+      const existingTour = state.tours.find((tour) => tour.id === action.payload.id);
       if (!existingTour) {
         state.tours.push(action.payload);
       }
     },
   },
 });
+
 
 export const { addTour } = tourSlice.actions;
 

@@ -9,5 +9,4 @@ export interface TourCardProps
   title: string;
   text: string;
   href: string;
-  like: boolean;
 }
