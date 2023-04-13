@@ -6,8 +6,8 @@ import Logo from '@/public/images/SpaceX-Logo.svg';
 import { BtnLink } from '@/components/buttons/BtnLink';
 
 const navItems = [
-  { id: '1', name: 'home', link: '#' },
-  { id: '2', name: 'tours', link: '#' },
+  { id: '1', name: 'home', link: '/' },
+  { id: '2', name: 'tours', link: '#tours' },
   { id: '3', name: 'about', link: '#' },
   { id: '4', name: 'help', link: '#' },
 ];
@@ -35,7 +35,9 @@ export const Header = ({ ...props }: HeaderProps): JSX.Element => {
             </ul>
           </nav>
 
-          <Button variant="heart" className="mr-6" />
+          <Link href="/favourites">
+            <Button variant="heart" className="mr-6" />
+          </Link>
           <Button variant="primary" header>
             sign in
           </Button>

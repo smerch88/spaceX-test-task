@@ -6,7 +6,7 @@ export interface ButtonProps
     HTMLButtonElement
   > {
   children?: ReactNode;
-  variant: 'primary' | 'heart';
+  variant: 'primary' | 'heart' | 'delete';
   like?: boolean;
   header?: boolean;
 }

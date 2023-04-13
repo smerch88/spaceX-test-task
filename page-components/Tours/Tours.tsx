@@ -1,75 +1,75 @@
 import { Section } from '@/components/common/Section';
 import { TourCard } from '@/components/common/TourCard';
-import { Paragraph } from '@/components/typography/Paragraph';
 import { Title } from '@/components/typography/Title';
 import cn from 'classnames';
 import Carousel from 'nuka-carousel';
+import { ToursProps } from './Tours.props';
 
-const data = [
-  {
-    id: 1,
-    title: 'extraordinary tour',
-    text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-    href: '/images/slider/ship.png',
-    like: false,
-  },
-  {
-    id: 2,
-    title: 'extraordinary tour',
-    text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-    href: '/images/slider/girl.png',
-    like: false,
-  },
-  {
-    id: 3,
-    title: 'extraordinary tour',
-    text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-    href: '/images/slider/guy.png',
-    like: false,
-  },
-  {
-    id: 4,
-    title: 'extraordinary tour',
-    text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-    href: '/images/slider/ship.png',
-    like: false,
-  },
-  {
-    id: 5,
-    title: 'extraordinary tour',
-    text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-    href: '/images/slider/girl.png',
-    like: false,
-  },
-  {
-    id: 6,
-    title: 'extraordinary tour',
-    text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-    href: '/images/slider/guy.png',
-    like: false,
-  },
-  {
-    id: 7,
-    title: 'extraordinary tour',
-    text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-    href: '/images/slider/ship.png',
-    like: false,
-  },
-  {
-    id: 8,
-    title: 'extraordinary tour',
-    text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-    href: '/images/slider/girl.png',
-    like: false,
-  },
-  {
-    id: 9,
-    title: 'extraordinary tour',
-    text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
-    href: '/images/slider/guy.png',
-    like: false,
-  },
-];
+// const data2 = [
+//   {
+//     id: 1,
+//     title: 'extraordinary tour',
+//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+//     href: '/images/slider/ship.png',
+//     like: false,
+//   },
+//   {
+//     id: 2,
+//     title: 'extraordinary tour',
+//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+//     href: '/images/slider/girl.png',
+//     like: false,
+//   },
+//   {
+//     id: 3,
+//     title: 'extraordinary tour',
+//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+//     href: '/images/slider/guy.png',
+//     like: false,
+//   },
+//   {
+//     id: 4,
+//     title: 'extraordinary tour',
+//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+//     href: '/images/slider/ship.png',
+//     like: false,
+//   },
+//   {
+//     id: 5,
+//     title: 'extraordinary tour',
+//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+//     href: '/images/slider/girl.png',
+//     like: false,
+//   },
+//   {
+//     id: 6,
+//     title: 'extraordinary tour',
+//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+//     href: '/images/slider/guy.png',
+//     like: false,
+//   },
+//   {
+//     id: 7,
+//     title: 'extraordinary tour',
+//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+//     href: '/images/slider/ship.png',
+//     like: false,
+//   },
+//   {
+//     id: 8,
+//     title: 'extraordinary tour',
+//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+//     href: '/images/slider/girl.png',
+//     like: false,
+//   },
+//   {
+//     id: 9,
+//     title: 'extraordinary tour',
+//     text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+//     href: '/images/slider/guy.png',
+//     like: false,
+//   },
+// ];
 
 const params = {
   defaultControlsConfig: {
@@ -82,7 +82,9 @@ const params = {
   slidesToScroll: 3,
 };
 
-export const ToursSection = () => {
+export const ToursSection: React.FC<ToursProps> = ({ ...props }: any) => {
+  console.log('ToursSection', props.data.rockets);
+
   return (
     <Section id="tours" className={cn('h-[100vh]')}>
       <div className="container">
@@ -91,17 +93,28 @@ export const ToursSection = () => {
         </Title>
         <ul className="">
           <Carousel {...params}>
-            {data.map(({ id, title, text, href, like }) => (
+            {props.data.rockets.map(({ id, name, description }: any) => (
               <TourCard
+                id={id}
                 key={id}
-                title={title}
-                text={text}
-                href={href}
-                like={like}
+                title={name}
+                text={description}
+                href={'/images/slider/ship.png'}
               />
             ))}
           </Carousel>
         </ul>
+        {/* <ul className="grid grid-cols-3 gap-8">
+          {data2.map(({ id, title, text, href, like }) => (
+            <TourCard
+              key={id}
+              title={title}
+              text={text}
+              href={href}
+              like={like}
+            />
+          ))}
+        </ul> */}
       </div>
     </Section>
   );
