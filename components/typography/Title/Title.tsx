@@ -6,7 +6,6 @@ export const Title = ({
   variant = 'dark',
   children,
   className,
-  content,
 }: TitleProps): JSX.Element => {
   const Tag = tag ?? 'h2';
 
@@ -18,9 +17,7 @@ export const Title = ({
         ['text-5xl font-extrabold	']: tag == 'h1',
         ['text-[32px] font-extrabold']: tag == 'h2',
         ['text-2xl font-bold']: tag == 'h3',
-      })}
-      {...(content ? { dangerouslySetInnerHTML: { __html: content } } : {})}
-    >
+      })}>
       {children}
     </Tag>
   );

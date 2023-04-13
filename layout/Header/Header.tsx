@@ -1,10 +1,9 @@
-import cn from 'classnames';
-import { HeaderProps } from './Header.props';
-import { Button } from '@/components/buttons/Button';
-import Link from 'next/link';
-import Logo from '@/public/images/SpaceX-Logo.svg';
 import { BtnLink } from '@/components/buttons/BtnLink';
+import { Button } from '@/components/buttons/Button';
+import Logo from '@/public/images/SpaceX-Logo.svg';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { HeaderProps } from './Header.props';
 
 const navItems = [
   { id: '1', name: 'home', link: '/' },
@@ -33,6 +32,7 @@ export const Header = ({ ...props }: HeaderProps): JSX.Element => {
   useEffect(() => {
     window.addEventListener('scroll', handleHiddenNavbar);
     return () => window.removeEventListener('scroll', handleHiddenNavbar);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [prevScrollY]);
 
   return (
