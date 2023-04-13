@@ -50,17 +50,10 @@ export const HeroSection = () => {
           {...params}
           renderCenterLeftControls={({ previousSlide }) => null}
           renderCenterRightControls={({ nextSlide }) => null}
-          // renderBottomCenterControls={() => (
-          //   <ul className="absolute left-[47%] top-[52%]">
-          //     <li className="">1</li>
-          //     <li className="">2</li>
-          //     <li className="">3</li>
-          //   </ul>
-          // )}
         >
           {carouselImages.map(image => (
-            <div key={image.id} className="h-[100vh] object-cover">
-              <img className="h-full w-full" src={image.src} alt={image.alt} />
+            <div key={image.id} className="h-[100vh]">
+              <img className="h-full w-full object-cover" src={image.src} alt={image.alt} />
             </div>
           ))}
         </Carousel>
